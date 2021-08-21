@@ -5,11 +5,11 @@ from werkzeug.utils import secure_filename
 import uuid
 
 
+from sr import mp4totext
+from sr import add_punkt
+from sr import sumextract
 
 
-#TryTheme - тестовый алгоритм на 5 тем
-#from trythemeit import generatetopics
-#from wordcgen import generatewordcloud 
 
 ALLOWED_EXTENSIONS = set(['mp4'])
 # куда и какие расширения для ограничений
