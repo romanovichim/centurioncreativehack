@@ -88,8 +88,8 @@ footer p {
 
   <section class="jumbotron text-center">
     <div class="container">
-      <h1 class="jumbotron-heading">Summaraizer</h1>
-		<p class="lead text-muted">Это MVP с экстрактивным подходом.</p>
+      <h1 class="jumbotron-heading">Brief Dolphin</h1>
+		<p class="lead text-muted">Платформа автоматического преобразования совещания в протокол</p>
 		 <!--<a href="https://colab.research.google.com/drive/1HaFBkCQ3hucbUnZZhgNEoXBUWxCm5DY1?usp=sharing" class="link-primary">Перейти по ссылке</a>-->
 	  <p>
 
@@ -99,7 +99,7 @@ footer p {
 
   <div class="album py-5 bg-light">
 	<div class="container">
-		<h1>Summary ready</h1>
+		<h1>Ваш итоговый протокол:</h1>
 			 <form method="POST" enctype="multipart/form-data" action="">
 			  
 			  <div class="form-group">
@@ -117,6 +117,16 @@ footer p {
 			</form>
 	</div>
   </div>
+   <div class="album py-5 bg-light">
+	<div class="container">
+		<h2>Выгрузить результат:</h2>
+			<button type="button" class="btn btn-warning" onclick=saveTextAsFile(exampleFormControlTextarea1.value,'protocol.txt')>Выгрузить</button>
+		<h2>Оцените результат:</h2>
+		<button type="button" class="btn btn-success">Хорошо</button>
+		<button type="button" class="btn btn-danger">Плохо</button>
+		<p class="lead text-muted">Ваша обратная связь поможет мне стать лучше</p>	 
+	</div>
+  </div> 
 
   
 
@@ -150,7 +160,30 @@ let btn = document.getElementById('sendButton');
 //inputElt.addEventListener("input", function(){
 //  btn.disabled = (this.value === '');
 //})
-	
+function saveTextAsFile(textToWrite, fileNameToSaveAs)
+    {
+     var textFileAsBlob = new Blob([textToWrite], {type:'text/plain'}); 
+     var downloadLink = document.createElement("a");
+     downloadLink.download = fileNameToSaveAs;
+     downloadLink.innerHTML = "Download File";
+     if (window.webkitURL != null)
+     {
+      // Chrome allows the link to be clicked
+      // without actually adding it to the DOM.
+      downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+     }
+     else
+     {
+      // Firefox requires the link to be added to the DOM
+      // before it can be clicked.
+      downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+      downloadLink.onclick = destroyClickedElement;
+      downloadLink.style.display = "none";
+      document.body.appendChild(downloadLink);
+     }
+    
+     downloadLink.click();
+    }	
 </script>
 </body>
 

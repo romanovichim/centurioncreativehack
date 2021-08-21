@@ -88,7 +88,7 @@ footer p {
 
   <section class="jumbotron text-center">
     <div class="container">
-      <h1 class="jumbotron-heading">Summaraizer</h1>
+      <h1 class="jumbotron-heading">Brief Dolphin</h1>
  
 	  <p>
 
@@ -98,11 +98,11 @@ footer p {
 
   <div class="album py-5 bg-light">
 	<div class="container">
-		<h1>Text to Sentences</h1>
+		<h1>Итоговые предложения:</h1>
 			 <form method="POST" enctype="multipart/form-data" action="">
 			  
 			  <div class="form-group">
-				<label for="exampleFormControlTextarea1">Push button for next step</label>
+				<label for="exampleFormControlTextarea1">Нажмите на кнопку для следующего шага</label>
 				<textarea name = "text" class="form-control" id="exampleFormControlTextarea1" rows="10">{{text_rdy}}</textarea>
 			  </div>
 			  
@@ -111,7 +111,7 @@ footer p {
 			  <input type="submit" id="sendButton" onclick="$('#loading').show();" class="btn btn-primary sendButton" value="Upload">
 			  </div>
 			  
-			  <div id="loading" style="display:none;"><img src="{{ url_for('static', filename='loading.gif') }}" alt="" />We started processing wait some minutes</div>
+			  <div id="loading" style="display:none;"><img src="{{ url_for('static', filename='loading.gif') }}" alt="" />Я начал обработку, подождите</div>
 			  
 			</form>
 	</div>

@@ -88,7 +88,7 @@ footer p {
 
   <section class="jumbotron text-center">
     <div class="container">
-      <h1 class="jumbotron-heading">Summaraizer</h1>
+      <h1 class="jumbotron-heading">Brief Dolphin</h1>
  
 	  <p>
 
@@ -98,20 +98,20 @@ footer p {
 
   <div class="album py-5 bg-light">
 	<div class="container">
-		<h1>Recognized text from audio</h1>
+		<h1>Я распознал:</h1>
 			 <form method="POST" enctype="multipart/form-data" action="">
 			  
 			  <div class="form-group">
-				<label for="exampleFormControlTextarea1">Push button for next step</label>
+				<label for="exampleFormControlTextarea1">Нажмите кнопку Загрузить для следующего этапа</label>
 				<textarea name = "text" class="form-control" id="exampleFormControlTextarea1" rows="10">{{text_rdy}}</textarea>
 			  </div>
 			  
 			  
 			  <div class="form-group">
-			  <input type="submit" id="sendButton" onclick="$('#loading').show();" class="btn btn-primary sendButton" value="Upload">
+			  <input type="submit" id="sendButton" onclick="$('#loading').show();" class="btn btn-primary sendButton" value="Загрузить">
 			  </div>
 			  
-			  <div id="loading" style="display:none;"><img src="{{ url_for('static', filename='loading.gif') }}" alt="" />We started processing wait some minutes</div>
+			  <div id="loading" style="display:none;"><img src="{{ url_for('static', filename='loading.gif') }}" alt="" />Я начал обработку, подождите</div>
 			  
 			</form>
 	</div>

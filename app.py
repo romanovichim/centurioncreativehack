@@ -8,8 +8,7 @@ import uuid
 from sr import mp4totext
 from sr import add_punkt
 from sr import sumextract
-
-
+from sr import howto
 
 ALLOWED_EXTENSIONS = set(['mp4'])
 # куда и какие расширения для ограничений
@@ -76,7 +75,7 @@ def punkt_file(filenames,text):
 
 @app.route('/summary/<filenames>/<text>')
 def summary(filenames,text):
-    text = sumextract(text, 2)
+    text = howto(text)
     return render_template('sum.html', text_rdy = text)
 
 
